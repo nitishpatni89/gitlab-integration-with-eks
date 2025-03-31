@@ -1,0 +1,29 @@
+PreRequisite :
+1) EKS cluster already setup , up and running 
+
+Steps :
+
+1) open gitlab > select project > operate > kubernetes cluster 
+2) click on connect cluster 
+3) go for option 2 and give name of the agent 
+4) deploy agent on eks cluster using helm chart
+example : 
+
+Agent access token:
+
+glagent-gMWF7WqBKJdHYLpkMuXzihBt15Kz_j_Lnuywe31hsfxgNjux1w
+
+The agent uses the token to connect with GitLab.
+
+You cannot see this token again after you close this window.
+Install using Helm (recommended)
+
+From a terminal, connect to your cluster and run this command. The token is included in the command. Use a Helm version compatible with your Kubernetes version (see Helm version support policy ).
+
+helm repo add gitlab https://charts.gitlab.io
+helm repo update
+helm upgrade --install gitops gitlab/gitlab-agent \
+    --namespace gitlab-agent-gitops \
+    --create-namespace \
+    --set config.token=glagent-gMWF7WqBKJdHYLpkMuXzihBt15Kz_j_Lnuywe31hsfxgNjux1w \
+    --set config.kasAddress=wss://kas.gitlab.com
