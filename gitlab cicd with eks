@@ -1,6 +1,7 @@
 PreRequisite :
 1) EKS cluster already setup , up and running 
 2) awscli , helm and kubectl version to be on latest
+3) gitlab available
 
 Steps :
 
