@@ -1,5 +1,5 @@
 PreRequisite :
-1) EKS cluster already setup , up and running 
+1) EKS cluster already setup , up and running or on-prem kubernetes cluster
 2) awscli , helm and kubectl version to be on latest
 3) gitlab available
 
