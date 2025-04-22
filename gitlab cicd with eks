@@ -72,3 +72,17 @@ Runner registered successfully. Feel free to start it, but if it's running alrea
 Configuration (with the authentication token) was saved in "/etc/gitlab-runner/config.toml" 
 root@gitops:~/gitlab# 
 
+
+Create your own agent configuration file in your project in new branch by name : .gitlab/agents/<agent name>/config.yaml example .gitlab/agents/argocd-gitlab/config.yaml here argocd-gitlab is my agent name
+
+config.yaml will look like :
+
+user_access:
+  access_as:
+      agent: {} # for free
+      user: {} # for premium+
+  projects:
+      - id: 68554665
+
+This will bind agent to read config from above project ID and deploy it on registered k8s agent deployed on k8s cluster.
+
